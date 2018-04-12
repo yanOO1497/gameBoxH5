@@ -1,0 +1,169 @@
+//reset
+ul,li{margin: 0;padding: 0;}
+
+//px转rem单位的函数
+@function r($num){
+  @return $num/40+rem;
+}
+//淡入淡出
+%opacity{
+  transition: opacity 1s linear;
+}
+
+
+//rem数值计算
+
+//背景图案
+@mixin background($url,$w:auto,$h:auto,$repeat:no-repeat,$size:contain) {
+  background:url("../images/#{$url}") $repeat ;
+  background-size: $size;
+  @if $w!=auto{
+    width: r($w);
+  }
+  @if $h!=auto{
+    height: r($h);
+  }
+}
+
+//绝对定位与相对定位元素
+@mixin position($pos,$t:auto,$r:auto,$b:auto,$l:auto,$z:auto){//设置绝对定位的位置模板
+  position: $pos;
+  @if $z!=auto{
+    z-index: $z;
+  }
+  @if $t!=auto{
+    top:r($t);
+  }@if $r!=auto{
+  left: r($l);
+  }@if $b!=auto{
+  bottom: r($b);
+  }@if $l!=auto{
+  right: r($r);
+  }
+}
+
+
+//使用序列图的动画
+@mixin ani-step($name,$frames,$time,$pos,$i:infinite,$delay:null){//动画名称，帧数，动画持续时间，最后一帧的背景图片位置，
+  @if($delay==null){
+    animation: $name $time steps($frames) $i;
+  }@else{
+    animation: $name $time steps($frames) $i $delay;
+  }
+  @at-root {
+    @keyframes #{$name}{
+      to{
+        background-position: $pos 0;
+      }
+    }
+  }
+}
+//位移动画
+@mixin aniT($name,$time,$x,$y:0,$delay:0s,$mode:forwards){
+  animation: $name $time linear $delay;
+  animation-fill-mode:$mode;
+  @at-root {
+    @if($y==0){
+      @keyframes #{$name} {
+        to{
+          transform: translateX($x);
+        }
+      }
+    }@else{
+    @keyframes #{$name} {
+      to{
+        transform: translate($x,$y);
+      }
+    }
+  }
+  }
+}
+
+@mixin aniY($name,$time,$y,$mode:forwards){
+  animation-fill-mode:$mode;
+  @at-root {
+    @keyframes #{$name} {
+      to{
+        transform: translateY($y)
+      }
+    }
+  }
+}
+//旋转动画
+@mixin aniR($name,$time,$r,$mode:forwards){
+  animation: $name $time ;
+  animation-fill-mode:$mode;
+  @at-root {
+    @keyframes #{$name} {
+      to{
+        transform: rotate($r);
+      }
+    }
+  }
+}
+//时钟边缘矩形路径动画
+@mixin pix-ani($name,$number,$distance,$time){
+  $box:0.075;//动画粒子的宽度
+  $width:7.25-$box;//动画粒子运动的水平位移
+  $height:2.9-$box;//动画粒子运动的垂直位移
+  $b:$height/$distance;//计算高度动画占比
+  $v:$distance/$time;//计算粒子在一个循环内移动的速度
+  $delay:$box/$v;//计算粒子的延迟时间，要连接成类似线的效果，需要用粒子的宽度除粒子的速度
+  @at-root{
+    @for $i from 1 to $number{
+      .stream-ani{
+        li:nth-child(#{$i}){
+          animation: $name $time+s linear infinite $delay*$i+s;
+        }
+      }
+    }
+    @keyframes #{$name}{
+      0%{
+        top:0;left:0;
+      }
+      #{percentage($b)}{
+        top:$height+rem;left:0;
+      }
+      50%{
+        top:$height+rem;left:$width+rem;
+      }
+      #{percentage($b)+50%}{
+        top:0;left:$width+rem;
+      }
+      100%{
+        top:0;left:0;
+      }
+    }
+  }
+}
+//输入px单位转为rem的长宽
+@mixin sizer($w,$h:$w){
+  width: r($w);
+  height: r($h);
+}
+//输入单位rem的长宽
+@mixin size($w,$h:$w){
+  width: $w+rem;
+  height: $h+rem;
+}
+
+
+/******占位符********/
+
+//使用绝对定位居中占位符
+%center{
+  margin: auto;
+  @include position(absolute,0,0,0,0)
+}
+
+//行内元素
+%inbox{
+  display: inline-block;
+}
+
+//占据全屏宽高
+%cover{
+  width: 16rem;
+  height:26.675rem;
+  @extend %center;
+}

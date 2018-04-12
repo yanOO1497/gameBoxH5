@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/*  reset */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, figure {
+  padding: 0;
+  margin: 0;
+}
+ul, ol {
+  list-style: none;
+}
+.tc{text-align: center;}
+body {
+  -ms-text-size-adjust: none;
+  -o-user-select: none;
+  -o-text-size-adjust: none;
+  user-select: none;
+  text-size-adjust: none;
+  font: 0.6rem "微软雅黑",Arial,Helvetica,sans-serif;
+  min-height: 100%;
+}
+button{border: none;}
+button:focus{outline: none;}
+a {
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
+.clearfix:after {
+  content: "";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clear {
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+.btn-guize,.btn-youxi,.btn-quanzi,.btn-second,.btn-reply,.btn-confirm,.btn-index,.btn-subscribe{background:url(../images/btn.png) no-repeat;background-size:4.675rem;display:inline-block}
+.btn-guize:hover,.btn-youxi:hover,.btn-quanzi:hover,.btn-second:hover,
+.btn-reply:hover,.btn-confirm:hover,.btn-index:hover,.btn-subscribe{cursor: pointer;}
+.btn-guize,.btn-youxi{width:4.675rem;height:2.525rem;background-size: cover; }
+.btn-guize{background-position:0 0;}
+.btn-guize:active{background-position:0 -2.575rem;}
+.btn-youxi{background-position:0 -7.725rem;}
+.btn-youxi:active{background-position:0 -5.15rem;}
+.btn-second,.btn-reply,.btn-confirm,.btn-subscribe{width:3.05rem;height:1.625rem;}
+.btn-quanzi{background-position:0 -10.3rem;width:3.075rem;height:1.625rem;}
+.btn-second{background-position:0 -11.975rem;}
+.btn-reply{background-position:0 -13.65rem;}
+.btn-confirm{background-position:0 -15.325rem;margin-top: 0.45rem;}
+.btn-index{background-position:0 -17rem;width:4.55rem;height:1.625rem;}
+.btn-subscribe{background-position:0 -18.7rem;}
+.btn-won{height:1.625rem;width: 4.575rem;background-image: url("../images/btn-won.png");background-size: cover;}
+body{background-color: #1b282f;}

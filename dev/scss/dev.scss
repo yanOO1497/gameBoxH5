@@ -1,0 +1,1327 @@
+@import "base/base";
+
+@mixin ani-opacity($time:1s,$iteration:infinite){
+  animation: opacity-to $time $iteration linear;
+}
+@keyframes opacity-to {
+  33%{
+    background-color: rgba(0,0,0,0);
+  }
+  66%{
+    background-color: black;
+  }
+}
+//@keyframes enter {
+//  from{
+//    opacity: 0;
+//  }
+//  to{
+//    opacity: 1;
+//  }
+//}
+//淡入效果
+//.enter{
+//  animation: enter 2s linear;
+//}
+//.go{
+//  animation: enter 2s linear;
+//}
+ul,li{margin: 0;padding: 0;list-style: none}
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  //background-color: #f7f1e8;
+}
+//引导开始界面
+.num0{
+  @extend %cover;
+  background-color: black;
+  z-index: 5;
+  .begin-title{
+    color: white;
+    @extend %center;
+    text-align: center;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.6rem;
+    font-weight: normal;
+  }
+}
+
+//遮罩
+.wrap{
+  @extend %cover;
+  text-align: center;
+  overflow: hidden;
+  transform-style:preserve-3d;
+  perspective:10rem;
+}
+
+.wrap-mask{
+  @extend %cover;
+  text-align: center;
+  box-sizing: border-box;
+  border:1.3rem hsl(36, 48%, 94%) solid;
+  border-top-width:0.6rem;
+  border-bottom-width: 2.6rem;
+  z-index: 20;
+}
+.page{
+  height:26.675rem;
+  position: absolute;
+  top:0;
+}
+
+.date{
+  @include sizer(460,40);
+  position: absolute;
+  left: 0;right: 0;
+  bottom: 1rem;
+  margin: auto;
+  z-index: 21;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.text{
+  @include sizer(71,473);
+  position: absolute;
+  top:r(125);
+  left: r(117);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+//@for $i from 2 to 8{
+//  .date.n#{$i}{
+//    background-image: url("../images/date/#{$i}.png");
+//  }
+//}
+
+//字幕
+
+//页面1
+.num1-1{
+  @extend %center;
+  height: r(275);
+  z-index: 3;
+  .time-cover{
+    @extend %inbox;
+    position: relative;
+    padding: r(16);
+    margin-bottom: r(78);
+    line-height: 0;
+  }
+  .stream-ani{
+    @include position(absolute,0,0,0,0,2);
+    .stream-pix{
+      position: absolute;
+      @include sizer(3,3);
+      background-color: white;
+    }
+  }
+  .time,.title{
+    @extend %inbox;
+    margin: 0;
+    position: relative;
+  }
+  %mask{
+    @extend %inbox;
+    position: absolute;
+    z-index: 22;
+    background-color:rgba(0,0,0,.27);
+    @include ani-opacity();
+  }
+  .time{
+    @include background("page1/i-time1.png",258,84);
+    z-index: 2;
+    .mask{
+      @extend %mask;
+      @include size(0.55,1.9);
+      top:0.3rem;
+      left:2.8rem;
+    }
+  }
+  .title{
+    @include background("page1/maoxian.png",400,51);
+    .mask{
+      @extend %mask;
+      @include size(1.83,0.6);
+      top:0.83rem;
+      left:9rem;
+    }
+  }
+}
+@keyframes num1-1-enter {
+  0%{
+    display: block;
+    opacity: 0;
+  }
+  #{percentage(11/97)},#{percentage(65/81)}{
+    opacity: 1;
+  }
+  100%{
+    display: none;
+    opacity: 0;
+  }
+}
+
+.num1-1.enter{
+  animation:num1-1-enter 81/25*1000ms linear;
+  animation-fill-mode: forwards;
+  stream-pix{
+    @include pix-ani(stream-pix-ani,21,20.3,3);
+  }
+  @keyframes time-change {
+    to{
+      background-image: url("../images/page1/i-time2.png");
+    }
+  }
+  .time{
+    animation: time-change 0.1s linear 2900ms ;
+    animation-fill-mode: forwards;
+  }
+}
+
+//页面1-2的转场动画
+.tr1-2{
+  position: relative;
+  height: 100%;
+  z-index: 2;
+  .bg-1,.bg-2{
+    background-color: black;
+    position: absolute;
+    top:-4rem;
+    @include size(20,50);
+  }
+  .bg-1{
+    transform:rotate(-32deg) translateX(13rem);
+    box-shadow:-0.9rem 0 1.7rem #000;
+    //transform-origin:0% 0%;
+  }
+  .bg-2{
+    transform:rotate(-32deg) translateX(-7rem);
+    box-shadow:0.9rem 0 1.7rem #000;
+    //transform-origin:0% 0%;
+  }
+}
+
+.tr1-2.enter{
+  //添加动画之后
+  .bg-1{
+    @include aniT(bg1,1s,27rem,$delay:69/25*1000ms)
+  }
+  .bg-2{
+    @include aniT(bg2,1s,-25rem,$delay:69/25*1000ms)
+  }
+}
+
+//第二个页面
+.num1-2{
+  background:url("../images/page1/cs1_2.jpg") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  position: absolute;
+  bottom:0;
+  right:0;
+  .box{
+    position: relative;
+    @include sizer(204,173);
+    left:7.15rem;
+    bottom: -2.38rem;
+  }
+  .box-mask{
+    @include background("page1/box-mask.png",204,173);
+    position: absolute;
+  }
+  @keyframes up {
+    #{percentage(1/15)},#{percentage(2/15)}{
+      transform: translateY(-1rem);
+    }
+    #{percentage(3/15)}{
+      transform: translateY(0);
+    }
+  }
+  .game-choose{
+    li{
+      position: absolute;
+      //@include aniY(up,1s,-1rem);
+    }
+    li:nth-child(1){
+      @include background("page1/game05.png",93,113);
+      top:-0.7rem;
+      left:4rem;
+      animation: up 15s linear infinite 15s;
+    }
+    @for $i from 2 to 6{
+      li:nth-child(#{$i}){
+        @include background("page1/game0"+(6-$i)+".png",93,113);
+          top:-1rem+$i*0.2;
+          left:4.4rem-$i*0.6;
+          animation: up 15s linear #{3-$i*3s} 1 142/25*1000ms;
+      }
+    }
+  }
+  .game-video{
+    position: absolute;
+    @include sizer(312,248);
+    left:r(277);
+    top:r(308);
+    video{
+      @include sizer(230);
+      position: absolute;
+      top:0.3rem;
+      left: 0.1rem;
+    }
+  }
+  .video-mask{
+    @include background("page1/video-mask.png",312,248);
+    position: absolute;
+    left:0;
+    top:0;
+  }
+  .light-box{
+    @include size(20,56);
+    transform: rotate(-38deg) translate(19rem, -23rem);
+    overflow: hidden;
+    filter: blur(0.2rem);
+    position: absolute;
+    opacity: 0;
+  }
+  .sun{
+    border-radius: 50%;
+    @include size(50,50);
+    transform: translate(-6rem, -22rem);
+    background: radial-gradient(rgba(243, 238, 202, 0.98) 5%,rgba(206, 193, 87, 0.309804) 15%,rgba(255,235,59,.121569) 60%);
+  }
+}
+@keyframes opa{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+//进场动画
+.num1-2.enter{
+  @include aniT(num1-2,4s,1.3rem,-0.8rem,70/25*1000ms);
+  animation-fill-mode: forwards;
+  .sun{
+    animation: opa 3s 65/25*1000ms;
+  }
+  .text{
+    background-image: url("../images/text/text1.png");
+    animation: opa 3s 70/25*1000ms;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes num1-2-out{
+  to{
+    transform:translateZ(5rem);
+  }
+}
+@keyframes tr2 {
+  to{
+    transform:scale(1.3)  translate(-1.5rem,-1.5rem) rotate(-10deg);
+  }
+}
+.tr2{
+  @include background("page1/tr2-3.png",386*13,130*13);
+  position: absolute;
+  top:-30.5rem;
+  left:-30.5rem;
+  transform-origin: left top;
+  transform:rotate(50deg);
+}
+.tr2.ani{
+  z-index:5;
+  animation: tr2 2s linear ;
+}
+//出场动画
+.num1-2.out{
+  animation: num1-2-out 6s linear;
+  z-index: 3;
+}
+.game-video.out {
+  animation: num1-2-out 6s linear;
+}
+.opacity-out{
+  opacity: 0;
+  transition:opacity 6s;
+  -webkit-transition:opacity 6s;
+}
+
+.fan{
+  transform: translate(-15rem,-8rem);
+  @include background("page1/fan.png",1280,720,$size:cover);
+  @include ani-step(fan-ani,7,1s,r(-8960));
+}
+//2-3屏的过渡
+.tr2-3{
+  @include background("page1/tr2-3.png",349*2,164*2);
+}
+//第二屏
+
+
+.num2{
+  //background:url("../images/page2/cs2.jpg") no-repeat;
+  //background-size: cover;
+  @include background("page2/cs2.jpg",640,1067,$size:cover);
+  .video-bg{
+    @include background("page2/dianshi.png",290,242);
+    position: absolute;
+    bottom: 0;
+    left:4rem;
+    z-index:2;
+  }
+}
+
+@keyframes num2-out {
+  to{
+    transform:translate(3.2rem,1rem) rotate(0) scale(.2);
+  }
+}
+.num2.out{
+  z-index:1;
+  animation: num2-out 0.6s linear;
+  animation-fill-mode: forwards;
+}
+.man-aa{
+  position: absolute;
+  @include sizer(233,329);
+  bottom: 1.7rem;
+  div{
+    position: absolute;
+  }
+  //手臂摆动
+  @keyframes f-control{
+    20%,45%{
+      transform: rotate(22deg)  translateY(0) skewX(0deg);
+    }//0-2s
+
+    60%,80%{
+      transform: rotate(18deg) translateY(-0.1rem) skewX(1deg);
+    }//2-3s
+    70%{
+      transform: rotate(19deg)  translateY(0) skewX(0deg);
+    }
+    //80%{
+    //  transform: rotate(18deg) translateY(-0.1rem) skewX(1deg);
+    //}
+    100%{
+      transform: rotate(0deg)  translateY(0) skewX(0deg);
+    }
+  }
+  //身体摆动
+  @keyframes m-body {
+    20%,45%,70%{
+      transform: rotate(10deg) skew(7deg);
+    }//0-2s
+    60%,80%{
+      transform: rotate(7deg) skew(8deg);
+    }//2-3s
+    100%{
+      transform: rotate(0deg) skew(0deg);
+    }
+  }
+  //头部摆动
+  @keyframes m-head {
+    20%,40%{
+      transform: rotate(18deg);
+    }//0-2s
+    60%,80%{
+      transform: rotate(14deg) translateY(-0.1rem);
+    }//2-3s
+    70%,90%{
+      transform: rotate(18deg) translateY(0);
+    }
+    100%{
+      transform: rotate(0deg) translateY(0);
+    }
+  }
+  @keyframes m-scale {
+    40%{
+      transform: scaleY(1);
+    }
+    60%{
+      transform: scaleY(1.02);
+    }
+  }
+  @keyframes brow {
+    40%,70%,90%{
+      transform: translateY(0);
+    }
+    60%,80%{
+      transform: translateY(-0.06rem);
+    }
+  }
+  //下半身摆动
+  @keyframes m-foot {
+    20%,45%{
+      transform: rotate(5deg) skew(18deg);
+    }
+    90%{
+      transform: rotate(0deg) skew(0deg);
+    }
+  }
+  @keyframes eye {
+    40%,100%{
+      transform: scaleY(1);
+    }
+    60%,90%{
+      transform: scaleY(0.8);
+    }
+  }
+  .up-body{
+    @include sizer(220,268);
+    left: r(11);
+  }
+  .head{
+    @include sizer(166,181);
+    top:0;
+    left: 0.25rem;
+    transform-origin:38% 91%;
+    z-index: 2;
+    animation: m-head 5s linear 1s infinite;
+  }
+  .face{
+    @include background("page2/aa/face.png",144,181);
+    right:r(11);
+  }
+  .ears{
+    @include background("page2/aa/ears.png",166,45);
+    top:r(92);
+    left:0.08rem;
+  }
+  .eye-l{
+    @include background("page2/aa/eye-l.png",36,15);
+    top:r(94);
+    left: r(37);
+    animation: eye 5s linear 1s infinite;
+  }
+  .eye-r{
+    @include background("page2/aa/eye-r.png",33,10);
+    right: r(37);
+    top:r(84);
+    animation: eye 5s linear 1s infinite;
+  }
+  .brow-l{
+    @include background("page2/aa/brow-l.png",30,11);
+    top:r(77);
+    left:r(41);
+    animation: brow 5s linear 1s infinite;
+  }
+  .brow-r{
+    @include background("page2/aa/brow-r.png",28,11);
+    top:r(69);
+    right:r(44);
+    animation: brow 5s linear 1s infinite;
+  }
+  .mouth{
+    @include background("page2/aa/mouth.png",51,27);
+    bottom: r(24);
+    left: r(64);
+  }
+
+  //手臂摆动
+  .control{
+    @include sizer(220,137);
+    bottom:0;
+    z-index: 1;
+    animation: f-control 5s linear 1s infinite;
+  }
+
+  .body{
+    @include background("page2/aa/body.png",147,133);
+    top:r(127);left: r(33);
+    transform-origin:left;
+    animation: m-body 5s linear 1s infinite;
+  }
+
+  .game-control{
+    @include background("page2/aa/game-control.png",65,11);
+    bottom: 0.2rem;
+    left:2.2rem;
+  }
+  @keyframes lg-r {
+    to{
+      transform: rotate(-3deg);
+    }
+  }
+  @keyframes lg-l {
+    to{
+      transform: rotate(5deg);
+    }
+  }
+  @keyframes lg-l-r {
+    20%,40%{
+      transform: rotate(6deg);
+    }
+    60%,90%{
+      transform: rotate(4deg);
+    }
+    100%{
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes lg-l-l {
+    to{
+      transform: rotate(-19deg);
+    }
+  }
+  .lg-l{
+    @include background("page2/aa/lg-l.png",110,137);
+    left: 0;
+    .f{
+      @include background("page2/aa/f-l.png",12,11);
+      bottom: r(15);
+      right: r(11);
+      transform-origin:left;
+      animation: lg-l-l 0.5s infinite alternate linear;
+    }
+  }
+  .lg-r{
+    @include background("page2/aa/lg-r.png",97,135);
+    right:0;
+    animation: lg-r 1.5s infinite alternate;
+    transform-origin: left 10%;
+    .f{
+      @include background("page2/aa/f-r.png",26,12);
+      bottom: r(15);
+      left: 0.27rem;
+      transform-origin:right;
+      animation: lg-l-r 0.5s infinite alternate;
+    }
+  }
+  .foot{
+    @include background("page2/aa/foot.png",220,89);
+    bottom:0;
+    animation: m-foot 5s linear 1s infinite;
+  }
+}
+
+.man-b{
+  position: absolute;
+  @include sizer(182,353);
+  bottom: r(68);
+  right: r(21);
+  div{
+    position: absolute;
+  }
+  .b-back{
+    @include background("page2/bb/b-back.png",50,23);
+    bottom: r(164);
+    right:r(42);
+  }
+  .b-neck{
+    @include background("page2/bb/neck.png",40,60);
+    right:2.05rem;
+    bottom:3.825rem;
+  }
+  .b-body{
+    @include background("page2/bb/body.png",125,114);
+    bottom:2.05rem;
+    left:.35rem;
+  }
+  .b-foot{
+    @include background("page2/bb/foot.png",179,105);
+    bottom: 0;
+  }
+  .b-head{
+    @include background("page2/bb/b-head.png",153,157);
+    top:0;
+    .brow-l{
+      @include background("page2/bb/brow-l.png",37,15);
+      top:r(64);
+      left: r(38);
+    }
+    .brow-r{
+      @include background("page2/bb/brow-r.png",41,23);
+      top:r(67);
+      right: r(30);
+    }
+    @keyframes b-eye {
+      0%,#{percentage(12/60)}{
+        transform: scale(1);
+      }
+      #{percentage(10/60)},#{percentage(11/60)}{
+        transform: scaleY(0.001);
+      }
+    }
+    .eye-l{
+      @include background("page2/bb/eye.png",32,24);
+      top:r(74);
+      left: r(38);
+      animation:b-eye 60/25*1000ms infinite;
+    }
+    .eye-r{
+      @include background("page2/bb/eye.png",32,24);
+      top:r(79);
+      right: r(32);
+      animation:b-eye 60/25*1000ms infinite;
+    }
+    .mouth{
+      @include background("page2/bb/mouth.png",64,18);
+      left:r(48);
+      bottom: r(28);
+    }
+  }
+  .b-lg{
+    @include background("page2/bb/b-lg.png",182,108);
+    top:r(140);
+  }
+}
+@keyframes  num3-enter{
+  from{
+    transform:scale(6, 6) rotate(27deg) translate(3rem,-3rem);
+  }to{
+     transform: scale(1, 1) rotate(0deg) translate(0rem,0rem);
+  }
+
+}
+.num3.num2-3{
+  transform-origin: top right;
+  transform: scale(6, 6) rotate(27deg) translate(3rem,-3rem);
+  animation:num3-enter 1s linear ;
+  animation-fill-mode:forwards;
+}
+.num3{
+  @include background("page3/cs3.png",640,1067);
+  div{
+    position: absolute;
+  }
+  .desk{
+    @include background("page3/desk.png",640,362);
+    top:r(72);
+  }
+  .foot-l,.foot-r,.game,.head{
+    bottom: 0;
+  }
+  .foot-l{
+    @include background("page3/foot-l.png",288,695);
+    left: r(25);
+  }
+  .foot-r{
+    @include background("page3/foot-r.png",288,570);
+    right: r(30);
+  }
+  .game{
+    @include background("page3/game.png",591,594);
+    left: r(37);
+  }
+  .f-l{
+    @include background("page3/f-l.png",74,160);
+    left: r(168);
+    top:r(190);
+  }
+  .f-r{
+    @include background("page3/f-r.png",74,160);
+    right: r(175);
+    top:r(190);
+  }
+  .head{
+    @include background("page3/head.png",640,290);
+  }
+  //.teacher{
+  //  @include background("page3/teacher.png",640,570);
+  //  display: none;
+  //  bottom:26rem;
+  //  opacity: 0.7;
+  //  transform: scale(.3,.3) translateY(-29.25rem);
+  //}
+
+  .teacher.ani{
+    display: block;
+    animation: teacher 1s linear;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes tr3-4 {
+  to{
+    transform: translateY(96.35rem);
+  }
+}
+@keyframes trf-4 {//影子进入page4后的动画
+  #{percentage(1/3)},#{percentage(2/3)}{
+    bottom: -15rem;
+  }
+  50%{
+    bottom: -18rem;
+  }
+  100%{
+    bottom: -11rem;
+  }
+}
+.num3.tr-down,.tr3-4.tr-down{
+  display: block;
+  animation: tr3-4 1s linear ;
+  animation-fill-mode: forwards;
+  .f-shadow{
+    bottom: -21rem;
+    animation: trf-4 3s linear ;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes teacher {
+  to{
+    bottom: -21rem;//不可更改
+  }
+}
+.tr3-4{
+  @include size(16,70);
+  position: absolute;
+  background: -webkit-linear-gradient(top,#ace,#ffe4b5,#ffe4b5,#ffe4b5,#ffe4b5);
+  bottom: 26rem;//不可更改
+  display: none;
+  z-index:1;
+  .f-shadow{
+    @include background("f-shadow.png",576,4027);
+    position: absolute;
+    bottom: -1rem;
+    right: 1.05rem;
+    opacity: 0.7;
+  }
+  .f-shadow.ani{
+    animation: teacher 1s linear;
+    animation-fill-mode: forwards;
+  }
+
+}
+@keyframes num4-up {
+  from{
+    transform: translate(0,-56.675rem) scale(1.3,1.3)
+  }
+  20%{
+    transform: translate(0,0);
+  }
+  80%{
+    transform: translate(-1rem,0);
+  }
+  100%{
+    transform: translate(0rem,-1rem) scale(.8);
+  }
+}
+//顺序上移
+//.num3.tr-down{
+//  @include aniY(num3-up,1s,53.35rem);
+//}
+//.tr3-4.tr-down{
+//  @include aniY(tr3-4-up,1s,53.35rem);
+//}
+.num4.tr-down{
+  transform-origin: 0 0;
+  animation: num4-up 5s linear;
+  animation-fill-mode: forwards;
+}
+
+//.num3.tr-up,.tr3-4.tr-up,.num4.tr-up{
+//  animation: tr3-4 1s linear alternate;
+//  animation-fill-mode: forwards;
+//}
+//@keyframes num4 {
+//
+//}
+
+.num4-1{
+  @include background("page4/cs4-1.png",640,1067);
+  //left:-0.9rem;
+  div{
+    position: absolute;
+  }
+  @keyframes num4-f-con{
+    #{percentage(1/3)},#{percentage(2/3)}{
+      transform: rotate(0deg);
+    }
+    50%{
+      transform: rotate(40deg);
+    }
+    100%{
+      transform: rotate(0deg) translateX(2.1rem);
+    }
+  }
+  .f-control{
+    top:4.65rem;
+    left: -2rem;
+    @include background("page4/finger.png",387,337);
+    transform-origin: top left;
+    transform: rotate(78deg) translateX(-1rem);
+    animation: num4-f-con 3s linear;
+    animation-fill-mode: forwards;
+  }
+  @keyframes coin{
+    to{
+      transform: translateX(5rem);
+    }
+  }
+  .coin{
+    @include background("page4/coin.png",129,129);
+    bottom: r(166);
+    right:0;
+    animation: coin 0.5s linear 3.5s ;
+    animation-fill-mode: forwards;
+  }
+  .f-mask{
+    @include background("page4/f-mask.png",345,212);
+    left:0;
+    bottom: r(36);
+  }
+  .mon-mask{
+    @include background("page4/mon-mask.png",194,555);
+    right:r(20);
+    top:r(162);
+  }
+}
+@keyframes num2-4 {
+  to{
+    transform: translateX(16rem);
+  }
+}
+.num4-2{
+  //@include background("page4/cs4_2.png",891,1067,$size:cover);
+  @include sizer(640,1067);
+  animation: num4-2-tr 4s linear;//4-2进场动画
+  animation-fill-mode: forwards;
+  z-index:1;
+  div{
+    position: absolute;
+  }
+  .num4-2bg{
+    @include background("page4/cs4-2.png",640,1067);
+    transform: translateX(-2.925rem);
+  }
+  .con{
+    @include sizer(769,923);
+    bottom: 0;
+    left:2rem;
+  }
+  video{
+    position: absolute;
+    width: 11rem;
+    top:5.32rem;
+    left:4.6rem;
+  }
+  .game-con{
+    @include background("page4/game-con.png",769,923);
+    bottom: 0;
+  }
+  .man{
+    @include background("page4/man.png",407,707);
+    left:r(-69);
+    bottom:-0.525rem;
+  }
+  .lg-t{
+    @include background("page4/lg-t.png",151,251);
+    right:r(25);
+    top:r(302);
+  }
+  .lg-b{
+    @include background("page4/lg-b.png",115,205);
+    right:r(-12);
+    top:r(348);
+  }
+}
+//@keyframes num4-bg {
+//  to{
+//    transform: translateX(-4.925rem);
+//  }
+//}
+@keyframes num4-con {
+  to{
+    transform: translateX(20rem);
+  }
+}
+//顺序播放转场,4-5动画
+.num4-2.ani{
+  z-index:1;
+  //.num4-2bg{
+  //  animation: num4-bg 1s linear;
+  //}
+  .con{
+    animation: num4-con 1s linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes num4-2-tr{
+  from{
+    transform: translate3d(3rem,-3rem,6rem);
+  }
+  25%{
+    transform: translate3d(3rem,-3rem,2rem);
+  }
+  100%{
+    transform:translate3d(-5.5rem,-3rem,2rem);
+  }
+}
+.num4-2.tr-down{
+  animation: num4-2-tr 4s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes tr4-5{
+  to{
+    right:-2.4rem;
+  }
+}
+.tr4-5{
+  position: absolute;
+  z-index:2;
+  right:-7rem;
+  top:-1rem;
+  animation: tr4-5 0.8s linear;
+  animation-fill-mode: forwards;
+  display: none;
+  .ad{
+    @include background("page5/ad.png",597,1060,$size:cover);
+    transform: scale(1.5);
+    @include ani-step(ad,7,0.8s,r(-4178),1);
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes tr4-5-enter {
+  from{
+    transform: scale(4, 4) translate(7rem,-2rem);
+  }
+  50%{
+    transform:scale(4,4) translate(9rem,-2rem);
+  }
+  to{
+    transform: scale(1, 1) translate(0,0);
+  }
+}
+.tr4-5.tr-enter{
+  animation: tr4-5-enter 2s;
+}
+@keyframes ani5 {
+  from{
+    transform: scale(3,3) translate(9rem,-2rem);
+  }
+  50%{
+    transform:scale(3,3) translate(9rem,-2rem);
+  }
+  to{
+    transform:scale(1.5,1.5) translate(2rem,-4rem);
+  }
+}
+.num5.ani{
+  animation: ani5 2s linear 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes m-l-t{
+  0%,75%{
+    transform: rotate(0deg);
+  }
+  25%,50%{
+    transform: rotate(4deg);
+  }
+
+}
+@keyframes m-l-b {
+  0%,75%{
+    transform: translate(0,0);
+  }
+  25%,50%{
+    transform: translate(-0.1rem,0.1rem);
+  }
+}
+.num5{
+  @include background("page5/cs5.png",640,1067,$size:cover);
+  transform: scale(3,3) translate(9rem,-2rem);
+  div{
+    position: absolute;
+  }
+  .cs-1{
+    position: absolute;
+    width: 3rem;
+    left:6.825rem;
+    top:r(450);
+  }
+  .cs-2{
+    position: absolute;
+    width: 2.5rem;
+    right:-0.4rem;
+    top:15.3rem;
+  }
+  .m-mask{
+    @include background("page5/m-mask.png",170,162);
+    left:6.8rem;
+    top:11.2rem;
+  }
+  .n-mask{
+    @include background("page5/n-mask.png",170,162);
+    right:-2rem;
+    top:r(589);
+  }
+  .m-lg{
+    @include sizer(176,84);
+    left: 4.625rem;
+    top: 15.5rem;
+  }
+  .m-l-t{
+    @include background("page5/m-l-t.png",90,83);
+    left:0;
+    top:0;
+    animation:m-l-t 4s infinite;
+  }
+  .m-l-b{
+    @include background("page5/m-l-b.png",112,35);
+    right:0;
+    bottom: 0;
+    animation:m-l-b 4s infinite;
+  }
+  .n-lg{
+    @include sizer(176,84);
+    left:11.65rem;
+    top:18.85rem;
+  }
+  .n-l-t{
+    @include background("page5/n-l-t.png",90,83);
+    left:0;
+    top:0;
+    animation:m-l-t 4s infinite 1s;
+  }
+  .n-l-b{
+    @include background("page5/n-l-b.png",112,35);
+    right:0;
+    bottom: 0;
+    animation:m-l-b 4s infinite 1s;
+  }
+}
+@keyframes num5-out {
+  0%{
+    transform:scale(1.5,1.5) translate(2rem,-4rem);
+  }
+  //#{percentage(7/109)}{
+  //  transform: translateX(0);
+  //}
+  #{percentage(92/109)}{
+    transform: translate(0,0);
+  }
+  100%{
+    transform: translateY(-27rem);
+  }
+}
+.num5.out{
+  animation: num5-out 109/25*1000ms ;
+  animation-fill-mode: forwards;
+}
+@keyframes num6-enter {
+  0%{
+    transform: translateY(25rem);
+  }
+  #{percentage(7/109)}{
+    transform: translateX(0rem);
+  }
+  100%{
+    background-color: black;
+  }
+}
+.num6.light{
+  @include background("page6/cs6.png",640,1067);
+  animation: num6-enter 109/25*1000ms;
+  div{
+    position: absolute;
+  }
+  .video-game{
+    position: absolute;
+    left:5.68rem;
+    top:11.85rem;
+    width: 7rem;
+  }
+  @keyframes mou-open {
+    0%,#{percentage(28/48)}{
+      transform: scaleY(0.2);
+    }
+    100%{
+      transform: scaleY(1);
+    }
+  }
+  .man-before{
+    top:r(395);
+    @include sizer(580,577);
+    .head{
+      top:0;
+      left:r(57);
+      @include background("page6/m-b/head.png",251,382);
+      .mouth{
+        @include background("page6/m-b/mouth.png",54,69);
+        top:r(188);
+        left:r(123);
+        transform: scaleY(0.2);
+        animation: mou-open 48/25*1000ms ease-in;
+        animation-fill-mode: forwards;
+      }
+    }
+    .body{
+      @include background("page6/m-b/body.png",306,232);
+      top:r(294);
+      left:r(60);
+    }
+    .desk{
+      @include background("page6/desk.png",640,190);
+      bottom: -3.1rem;
+    }
+    .lg-l{
+      @include background("page6/m-b/lg-l.png",144,222);
+      left:r(-49);
+      top:r(316);
+    }
+    @keyframes lg-r {
+      #{percentage(7/87)},#{percentage(58/87)},#{percentage(64/87)},#{percentage(82/87)}{
+        transform: rotate(8deg);
+      }
+      #{percentage(7/87)}{
+        transform: translate3d(0,0,0.1rem);
+      }
+      #{percentage(20/87)},#{percentage(30/87)}{
+        transform: rotate(0deg);
+      }
+      #{percentage(75/87)}{
+        transform: rotate(3deg);
+      }
+    }
+    .lg-r{
+      @include background("page6/m-b/lg-r.png",196,206);
+      left:r(272);
+      top:r(304);
+      transform-origin: top left;
+      transform: rotate(8deg);
+    }
+    @keyframes fin-r-1 {
+      0%,#{percentage(14/30)}{
+        transform: translateY(0);
+      }
+      #{percentage(7/30)}{
+        transform: translateY(-0.1rem);
+      }
+    }
+    @keyframes h-r{
+      0%,#{percentage(58/87)},#{percentage(64/87)},#{percentage(82/87)}{
+        transform: translate3d(-0.5rem,0,0);
+      }
+      #{percentage(7/87)}{
+        transform: translate3d(0,0,0.1rem);
+      }
+      #{percentage(20/87)},#{percentage(30/87)}{
+        transform: translate3d(1rem,0,0);
+      }
+      #{percentage(75/87)}{
+        transform: translate3d(0.5rem,0,0);
+      }
+    }
+    .h-r{
+      @include background("page6/m-b/hand-r.png",289,124);
+      top:r(450);
+      left:r(294);
+      animation:h-r 87/25*1000ms linear infinite;
+      animation-fill-mode: forwards;
+      .fin-r-1{
+        @include background("page6/m-b/fin-r-1.png",78,110);
+        bottom:0;
+        left:r(84);
+        animation:fin-r-1 30/25*1000ms linear infinite;
+        animation-fill-mode: forwards;
+      }
+    }
+    @keyframes h-l {
+      #{percentage(5/60)},100%{
+        transform: translate3d(0,0,0);
+      }
+      #{percentage(19/60)},#{percentage(22/60)} {
+        transform: translateX(-1rem);
+      }
+      #{percentage(35/60)},#{percentage(35/60)}{
+        transform: translate3d(-1rem,0,-0.1rem);
+      }
+      #{percentage(39/60)}{
+        transform: translate3d(0,0,-0.1rem);
+      }
+    }
+    @keyframes fin{
+      from{
+        transform: rotate(-5deg);
+      }
+      to{
+        transform: rotate(0deg);
+      }
+    }
+    .h-l{
+      @include background("page6/m-b/mouse.png",180,110);
+      bottom: 0;
+      animation:h-l 60/25*1000ms linear infinite;
+      .fin-1{
+        @include background("page6/m-b/fin-1.png",53,99);
+        left:1.675rem;
+        transform-origin: top left;
+        transform: rotate(-5deg);
+        animation:fin 200ms;
+        animation-fill-mode: forwards;
+      }
+      .fin-2{
+        @include background("page6/m-b/fin-2.png",75,85);
+        right:r(17);
+      }
+    }
+
+  }
+  .man-after{
+
+  }
+}
+.num6.darken{
+  background-color: black;
+  width: 100%;
+  div{
+    position: absolute;
+  }
+  @keyframes num6-d-eye {
+    #{percentage(4/25)},#{percentage(12/25)}{
+      transform:scaleY(0.001);
+    }
+    0%,#{percentage(8/25)},#{percentage(16/25)}{
+      transform:scaleY(1);
+    }
+  }
+  .eye-l{
+    @include background("page6/eye-l.png",61,50);
+    left:r(126);
+    top:r(526);
+    animation: num6-d-eye 1s;
+  }
+  .eye-r{
+    @include background("page6/eye-r.png",54,44);
+    top:r(521);
+    left:r(218);
+    animation: num6-d-eye 1s;
+  }
+}
+.num7{
+  @include background("page7/cs7.png",640,1067);
+  div{
+    position: absolute;
+  }
+  .c-mask{
+    @include background("page7/c-mask.png",620,327,$size:cover);
+    bottom: 0;
+    right: 0;
+  }
+  .zhuzi{
+    background:url("../images/page7/zhuzi.png") repeat-y;
+    @include sizer(50,1067);
+    right: r(60);
+  }
+  .hand{
+    @include background("page7/handrail.png",160,216);
+  }
+  .hand-1{
+    transform: scale(0.5);
+  }
+  .hand-2{
+    transform: scale(0.8);
+  }
+  //.hand-3{
+  //  transform: scale(0.5);
+  //}
+
+}

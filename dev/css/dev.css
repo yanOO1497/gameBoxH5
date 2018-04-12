@@ -1,0 +1,1860 @@
+@charset "UTF-8";
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/******占位符********/
+.num0, .wrap, .wrap-mask, .num0 .begin-title, .num1-1 {
+  margin: auto;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  bottom: 0rem;
+  right: 0rem;
+}
+
+.num1-1 .time-cover, .num1-1 .time, .num1-1 .title, .num1-1 .time .mask, .num1-1 .title .mask {
+  display: inline-block;
+}
+
+.num0, .wrap, .wrap-mask {
+  width: 16rem;
+  height: 26.675rem;
+}
+
+@keyframes opacity-to {
+  33% {
+    background-color: transparent;
+  }
+  66% {
+    background-color: black;
+  }
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.num0 {
+  background-color: black;
+  z-index: 5;
+}
+
+.num0 .begin-title {
+  color: white;
+  text-align: center;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-size: 0.6rem;
+  font-weight: normal;
+}
+
+.wrap {
+  text-align: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 10rem;
+}
+
+.wrap-mask {
+  text-align: center;
+  box-sizing: border-box;
+  border: 1.3rem #f7f1e8 solid;
+  border-top-width: 0.6rem;
+  border-bottom-width: 2.6rem;
+  z-index: 20;
+}
+
+.page {
+  height: 26.675rem;
+  position: absolute;
+  top: 0;
+}
+
+.date {
+  width: 11.5rem;
+  height: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  margin: auto;
+  z-index: 21;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.text {
+  width: 1.775rem;
+  height: 11.825rem;
+  position: absolute;
+  top: 3.125rem;
+  left: 2.925rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+.num1-1 {
+  height: 6.875rem;
+  z-index: 3;
+}
+
+.num1-1 .time-cover {
+  position: relative;
+  padding: 0.4rem;
+  margin-bottom: 1.95rem;
+  line-height: 0;
+}
+
+.num1-1 .stream-ani {
+  position: absolute;
+  z-index: 2;
+  top: 0rem;
+  left: 0rem;
+  bottom: 0rem;
+  right: 0rem;
+}
+
+.num1-1 .stream-ani .stream-pix {
+  position: absolute;
+  width: 0.075rem;
+  height: 0.075rem;
+  background-color: white;
+}
+
+.num1-1 .time, .num1-1 .title {
+  margin: 0;
+  position: relative;
+}
+
+.num1-1 .time .mask, .num1-1 .title .mask {
+  position: absolute;
+  z-index: 22;
+  background-color: rgba(0, 0, 0, 0.27);
+  animation: opacity-to 1s infinite linear;
+}
+
+.num1-1 .time {
+  background: url("../images/page1/i-time1.png") no-repeat;
+  background-size: contain;
+  width: 6.45rem;
+  height: 2.1rem;
+  z-index: 2;
+}
+
+.num1-1 .time .mask {
+  width: 0.55rem;
+  height: 1.9rem;
+  top: 0.3rem;
+  left: 2.8rem;
+}
+
+.num1-1 .title {
+  background: url("../images/page1/maoxian.png") no-repeat;
+  background-size: contain;
+  width: 10rem;
+  height: 1.275rem;
+}
+
+.num1-1 .title .mask {
+  width: 1.83rem;
+  height: 0.6rem;
+  top: 0.83rem;
+  left: 9rem;
+}
+
+@keyframes num1-1-enter {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+  11.34021%, 80.24691% {
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.num1-1.enter {
+  animation: num1-1-enter 3240ms linear;
+  animation-fill-mode: forwards;
+}
+
+.stream-ani li:nth-child(1) {
+  animation: stream-pix-ani 3s linear infinite 0.01108s;
+}
+
+.stream-ani li:nth-child(2) {
+  animation: stream-pix-ani 3s linear infinite 0.02217s;
+}
+
+.stream-ani li:nth-child(3) {
+  animation: stream-pix-ani 3s linear infinite 0.03325s;
+}
+
+.stream-ani li:nth-child(4) {
+  animation: stream-pix-ani 3s linear infinite 0.04433s;
+}
+
+.stream-ani li:nth-child(5) {
+  animation: stream-pix-ani 3s linear infinite 0.05542s;
+}
+
+.stream-ani li:nth-child(6) {
+  animation: stream-pix-ani 3s linear infinite 0.0665s;
+}
+
+.stream-ani li:nth-child(7) {
+  animation: stream-pix-ani 3s linear infinite 0.07759s;
+}
+
+.stream-ani li:nth-child(8) {
+  animation: stream-pix-ani 3s linear infinite 0.08867s;
+}
+
+.stream-ani li:nth-child(9) {
+  animation: stream-pix-ani 3s linear infinite 0.09975s;
+}
+
+.stream-ani li:nth-child(10) {
+  animation: stream-pix-ani 3s linear infinite 0.11084s;
+}
+
+.stream-ani li:nth-child(11) {
+  animation: stream-pix-ani 3s linear infinite 0.12192s;
+}
+
+.stream-ani li:nth-child(12) {
+  animation: stream-pix-ani 3s linear infinite 0.133s;
+}
+
+.stream-ani li:nth-child(13) {
+  animation: stream-pix-ani 3s linear infinite 0.14409s;
+}
+
+.stream-ani li:nth-child(14) {
+  animation: stream-pix-ani 3s linear infinite 0.15517s;
+}
+
+.stream-ani li:nth-child(15) {
+  animation: stream-pix-ani 3s linear infinite 0.16626s;
+}
+
+.stream-ani li:nth-child(16) {
+  animation: stream-pix-ani 3s linear infinite 0.17734s;
+}
+
+.stream-ani li:nth-child(17) {
+  animation: stream-pix-ani 3s linear infinite 0.18842s;
+}
+
+.stream-ani li:nth-child(18) {
+  animation: stream-pix-ani 3s linear infinite 0.19951s;
+}
+
+.stream-ani li:nth-child(19) {
+  animation: stream-pix-ani 3s linear infinite 0.21059s;
+}
+
+.stream-ani li:nth-child(20) {
+  animation: stream-pix-ani 3s linear infinite 0.22167s;
+}
+
+@keyframes stream-pix-ani {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  13.91626% {
+    top: 2.825rem;
+    left: 0;
+  }
+  50% {
+    top: 2.825rem;
+    left: 7.175rem;
+  }
+  63.91626% {
+    top: 0;
+    left: 7.175rem;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes time-change {
+  to {
+    background-image: url("../images/page1/i-time2.png");
+  }
+}
+
+.num1-1.enter .time {
+  animation: time-change 0.1s linear 2900ms;
+  animation-fill-mode: forwards;
+}
+
+.tr1-2 {
+  position: relative;
+  height: 100%;
+  z-index: 2;
+}
+
+.tr1-2 .bg-1, .tr1-2 .bg-2 {
+  background-color: black;
+  position: absolute;
+  top: -4rem;
+  width: 20rem;
+  height: 50rem;
+}
+
+.tr1-2 .bg-1 {
+  transform: rotate(-32deg) translateX(13rem);
+  box-shadow: -0.9rem 0 1.7rem #000;
+}
+
+.tr1-2 .bg-2 {
+  transform: rotate(-32deg) translateX(-7rem);
+  box-shadow: 0.9rem 0 1.7rem #000;
+}
+
+.tr1-2.enter .bg-1 {
+  animation: bg1 1s linear 2760ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bg1 {
+  to {
+    transform: translateX(27rem);
+  }
+}
+
+.tr1-2.enter .bg-2 {
+  animation: bg2 1s linear 2760ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bg2 {
+  to {
+    transform: translateX(-25rem);
+  }
+}
+
+.num1-2 {
+  background: url("../images/page1/cs1_2.jpg") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.num1-2 .box {
+  position: relative;
+  width: 5.1rem;
+  height: 4.325rem;
+  left: 7.15rem;
+  bottom: -2.38rem;
+}
+
+.num1-2 .box-mask {
+  background: url("../images/page1/box-mask.png") no-repeat;
+  background-size: contain;
+  width: 5.1rem;
+  height: 4.325rem;
+  position: absolute;
+}
+
+@keyframes up {
+  6.66667%, 13.33333% {
+    transform: translateY(-1rem);
+  }
+  20% {
+    transform: translateY(0);
+  }
+}
+
+.num1-2 .game-choose li {
+  position: absolute;
+}
+
+.num1-2 .game-choose li:nth-child(1) {
+  background: url("../images/page1/game05.png") no-repeat;
+  background-size: contain;
+  width: 2.325rem;
+  height: 2.825rem;
+  top: -0.7rem;
+  left: 4rem;
+  animation: up 15s linear infinite 15s;
+}
+
+.num1-2 .game-choose li:nth-child(2) {
+  background: url("../images/page1/game04.png") no-repeat;
+  background-size: contain;
+  width: 2.325rem;
+  height: 2.825rem;
+  top: -0.6rem;
+  left: 3.2rem;
+  animation: up 15s linear -3s 1 5680ms;
+}
+
+.num1-2 .game-choose li:nth-child(3) {
+  background: url("../images/page1/game03.png") no-repeat;
+  background-size: contain;
+  width: 2.325rem;
+  height: 2.825rem;
+  top: -0.4rem;
+  left: 2.6rem;
+  animation: up 15s linear -6s 1 5680ms;
+}
+
+.num1-2 .game-choose li:nth-child(4) {
+  background: url("../images/page1/game02.png") no-repeat;
+  background-size: contain;
+  width: 2.325rem;
+  height: 2.825rem;
+  top: -0.2rem;
+  left: 2rem;
+  animation: up 15s linear -9s 1 5680ms;
+}
+
+.num1-2 .game-choose li:nth-child(5) {
+  background: url("../images/page1/game01.png") no-repeat;
+  background-size: contain;
+  width: 2.325rem;
+  height: 2.825rem;
+  top: 0rem;
+  left: 1.4rem;
+  animation: up 15s linear -12s 1 5680ms;
+}
+
+.num1-2 .game-video {
+  position: absolute;
+  width: 7.8rem;
+  height: 6.2rem;
+  left: 6.925rem;
+  top: 7.7rem;
+}
+
+.num1-2 .game-video video {
+  width: 5.75rem;
+  height: 5.75rem;
+  position: absolute;
+  top: 0.3rem;
+  left: 0.1rem;
+}
+
+.num1-2 .video-mask {
+  background: url("../images/page1/video-mask.png") no-repeat;
+  background-size: contain;
+  width: 7.8rem;
+  height: 6.2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.num1-2 .light-box {
+  width: 20rem;
+  height: 56rem;
+  transform: rotate(-38deg) translate(19rem, -23rem);
+  overflow: hidden;
+  filter: blur(0.2rem);
+  position: absolute;
+  opacity: 0;
+}
+
+.num1-2 .sun {
+  border-radius: 50%;
+  width: 50rem;
+  height: 50rem;
+  transform: translate(-6rem, -22rem);
+  background: radial-gradient(rgba(243, 238, 202, 0.98) 5%, rgba(206, 193, 87, 0.309804) 15%, rgba(255, 235, 59, 0.121569) 60%);
+}
+
+@keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.num1-2.enter {
+  animation: num1-2 4s linear 2800ms;
+  animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes num1-2 {
+  to {
+    transform: translate(1.3rem, -0.8rem);
+  }
+}
+
+.num1-2.enter .sun {
+  animation: opa 3s 2600ms;
+}
+
+.num1-2.enter .text {
+  background-image: url("../images/text/text1.png");
+  animation: opa 3s 2800ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes num1-2-out {
+  to {
+    transform: translateZ(5rem);
+  }
+}
+
+@keyframes tr2 {
+  to {
+    transform: scale(1.3) translate(-1.5rem, -1.5rem) rotate(-10deg);
+  }
+}
+
+.tr2 {
+  background: url("../images/page1/tr2-3.png") no-repeat;
+  background-size: contain;
+  width: 125.45rem;
+  height: 42.25rem;
+  position: absolute;
+  top: -30.5rem;
+  left: -30.5rem;
+  transform-origin: left top;
+  transform: rotate(50deg);
+}
+
+.tr2.ani {
+  z-index: 5;
+  animation: tr2 2s linear;
+}
+
+.num1-2.out {
+  animation: num1-2-out 6s linear;
+  z-index: 3;
+}
+
+.game-video.out {
+  animation: num1-2-out 6s linear;
+}
+
+.opacity-out {
+  opacity: 0;
+  transition: opacity 6s;
+  -webkit-transition: opacity 6s;
+}
+
+.fan {
+  transform: translate(-15rem, -8rem);
+  background: url("../images/page1/fan.png") no-repeat;
+  background-size: cover;
+  width: 32rem;
+  height: 18rem;
+  animation: fan-ani 1s steps(7) infinite;
+}
+
+@keyframes fan-ani {
+  to {
+    background-position: -224rem 0;
+  }
+}
+
+.tr2-3 {
+  background: url("../images/page1/tr2-3.png") no-repeat;
+  background-size: contain;
+  width: 17.45rem;
+  height: 8.2rem;
+}
+
+.num2 {
+  background: url("../images/page2/cs2.jpg") no-repeat;
+  background-size: cover;
+  width: 16rem;
+  height: 26.675rem;
+}
+
+.num2 .video-bg {
+  background: url("../images/page2/dianshi.png") no-repeat;
+  background-size: contain;
+  width: 7.25rem;
+  height: 6.05rem;
+  position: absolute;
+  bottom: 0;
+  left: 4rem;
+  z-index: 2;
+}
+
+@keyframes num2-out {
+  to {
+    transform: translate(3.2rem, 1rem) rotate(0) scale(0.2);
+  }
+}
+
+.num2.out {
+  z-index: 1;
+  animation: num2-out 0.6s linear;
+  animation-fill-mode: forwards;
+}
+
+.man-aa {
+  position: absolute;
+  width: 5.825rem;
+  height: 8.225rem;
+  bottom: 1.7rem;
+}
+
+.man-aa div {
+  position: absolute;
+}
+
+@keyframes f-control {
+  20%, 45% {
+    transform: rotate(22deg) translateY(0) skewX(0deg);
+  }
+  60%, 80% {
+    transform: rotate(18deg) translateY(-0.1rem) skewX(1deg);
+  }
+  70% {
+    transform: rotate(19deg) translateY(0) skewX(0deg);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0) skewX(0deg);
+  }
+}
+
+@keyframes m-body {
+  20%, 45%, 70% {
+    transform: rotate(10deg) skew(7deg);
+  }
+  60%, 80% {
+    transform: rotate(7deg) skew(8deg);
+  }
+  100% {
+    transform: rotate(0deg) skew(0deg);
+  }
+}
+
+@keyframes m-head {
+  20%, 40% {
+    transform: rotate(18deg);
+  }
+  60%, 80% {
+    transform: rotate(14deg) translateY(-0.1rem);
+  }
+  70%, 90% {
+    transform: rotate(18deg) translateY(0);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes m-scale {
+  40% {
+    transform: scaleY(1);
+  }
+  60% {
+    transform: scaleY(1.02);
+  }
+}
+
+@keyframes brow {
+  40%, 70%, 90% {
+    transform: translateY(0);
+  }
+  60%, 80% {
+    transform: translateY(-0.06rem);
+  }
+}
+
+@keyframes m-foot {
+  20%, 45% {
+    transform: rotate(5deg) skew(18deg);
+  }
+  90% {
+    transform: rotate(0deg) skew(0deg);
+  }
+}
+
+@keyframes eye {
+  40%, 100% {
+    transform: scaleY(1);
+  }
+  60%, 90% {
+    transform: scaleY(0.8);
+  }
+}
+
+.man-aa .up-body {
+  width: 5.5rem;
+  height: 6.7rem;
+  left: 0.275rem;
+}
+
+.man-aa .head {
+  width: 4.15rem;
+  height: 4.525rem;
+  top: 0;
+  left: 0.25rem;
+  transform-origin: 38% 91%;
+  z-index: 2;
+  animation: m-head 5s linear 1s infinite;
+}
+
+.man-aa .face {
+  background: url("../images/page2/aa/face.png") no-repeat;
+  background-size: contain;
+  width: 3.6rem;
+  height: 4.525rem;
+  right: 0.275rem;
+}
+
+.man-aa .ears {
+  background: url("../images/page2/aa/ears.png") no-repeat;
+  background-size: contain;
+  width: 4.15rem;
+  height: 1.125rem;
+  top: 2.3rem;
+  left: 0.08rem;
+}
+
+.man-aa .eye-l {
+  background: url("../images/page2/aa/eye-l.png") no-repeat;
+  background-size: contain;
+  width: 0.9rem;
+  height: 0.375rem;
+  top: 2.35rem;
+  left: 0.925rem;
+  animation: eye 5s linear 1s infinite;
+}
+
+.man-aa .eye-r {
+  background: url("../images/page2/aa/eye-r.png") no-repeat;
+  background-size: contain;
+  width: 0.825rem;
+  height: 0.25rem;
+  right: 0.925rem;
+  top: 2.1rem;
+  animation: eye 5s linear 1s infinite;
+}
+
+.man-aa .brow-l {
+  background: url("../images/page2/aa/brow-l.png") no-repeat;
+  background-size: contain;
+  width: 0.75rem;
+  height: 0.275rem;
+  top: 1.925rem;
+  left: 1.025rem;
+  animation: brow 5s linear 1s infinite;
+}
+
+.man-aa .brow-r {
+  background: url("../images/page2/aa/brow-r.png") no-repeat;
+  background-size: contain;
+  width: 0.7rem;
+  height: 0.275rem;
+  top: 1.725rem;
+  right: 1.1rem;
+  animation: brow 5s linear 1s infinite;
+}
+
+.man-aa .mouth {
+  background: url("../images/page2/aa/mouth.png") no-repeat;
+  background-size: contain;
+  width: 1.275rem;
+  height: 0.675rem;
+  bottom: 0.6rem;
+  left: 1.6rem;
+}
+
+.man-aa .control {
+  width: 5.5rem;
+  height: 3.425rem;
+  bottom: 0;
+  z-index: 1;
+  animation: f-control 5s linear 1s infinite;
+}
+
+.man-aa .body {
+  background: url("../images/page2/aa/body.png") no-repeat;
+  background-size: contain;
+  width: 3.675rem;
+  height: 3.325rem;
+  top: 3.175rem;
+  left: 0.825rem;
+  transform-origin: left;
+  animation: m-body 5s linear 1s infinite;
+}
+
+.man-aa .game-control {
+  background: url("../images/page2/aa/game-control.png") no-repeat;
+  background-size: contain;
+  width: 1.625rem;
+  height: 0.275rem;
+  bottom: 0.2rem;
+  left: 2.2rem;
+}
+
+@keyframes lg-r {
+  to {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes lg-l {
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes lg-l-r {
+  20%, 40% {
+    transform: rotate(6deg);
+  }
+  60%, 90% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes lg-l-l {
+  to {
+    transform: rotate(-19deg);
+  }
+}
+
+.man-aa .lg-l {
+  background: url("../images/page2/aa/lg-l.png") no-repeat;
+  background-size: contain;
+  width: 2.75rem;
+  height: 3.425rem;
+  left: 0;
+}
+
+.man-aa .lg-l .f {
+  background: url("../images/page2/aa/f-l.png") no-repeat;
+  background-size: contain;
+  width: 0.3rem;
+  height: 0.275rem;
+  bottom: 0.375rem;
+  right: 0.275rem;
+  transform-origin: left;
+  animation: lg-l-l 0.5s infinite alternate linear;
+}
+
+.man-aa .lg-r {
+  background: url("../images/page2/aa/lg-r.png") no-repeat;
+  background-size: contain;
+  width: 2.425rem;
+  height: 3.375rem;
+  right: 0;
+  animation: lg-r 1.5s infinite alternate;
+  transform-origin: left 10%;
+}
+
+.man-aa .lg-r .f {
+  background: url("../images/page2/aa/f-r.png") no-repeat;
+  background-size: contain;
+  width: 0.65rem;
+  height: 0.3rem;
+  bottom: 0.375rem;
+  left: 0.27rem;
+  transform-origin: right;
+  animation: lg-l-r 0.5s infinite alternate;
+}
+
+.man-aa .foot {
+  background: url("../images/page2/aa/foot.png") no-repeat;
+  background-size: contain;
+  width: 5.5rem;
+  height: 2.225rem;
+  bottom: 0;
+  animation: m-foot 5s linear 1s infinite;
+}
+
+.man-b {
+  position: absolute;
+  width: 4.55rem;
+  height: 8.825rem;
+  bottom: 1.7rem;
+  right: 0.525rem;
+}
+
+.man-b div {
+  position: absolute;
+}
+
+.man-b .b-back {
+  background: url("../images/page2/bb/b-back.png") no-repeat;
+  background-size: contain;
+  width: 1.25rem;
+  height: 0.575rem;
+  bottom: 4.1rem;
+  right: 1.05rem;
+}
+
+.man-b .b-neck {
+  background: url("../images/page2/bb/neck.png") no-repeat;
+  background-size: contain;
+  width: 1rem;
+  height: 1.5rem;
+  right: 2.05rem;
+  bottom: 3.825rem;
+}
+
+.man-b .b-body {
+  background: url("../images/page2/bb/body.png") no-repeat;
+  background-size: contain;
+  width: 3.125rem;
+  height: 2.85rem;
+  bottom: 2.05rem;
+  left: .35rem;
+}
+
+.man-b .b-foot {
+  background: url("../images/page2/bb/foot.png") no-repeat;
+  background-size: contain;
+  width: 4.475rem;
+  height: 2.625rem;
+  bottom: 0;
+}
+
+.man-b .b-head {
+  background: url("../images/page2/bb/b-head.png") no-repeat;
+  background-size: contain;
+  width: 3.825rem;
+  height: 3.925rem;
+  top: 0;
+}
+
+.man-b .b-head .brow-l {
+  background: url("../images/page2/bb/brow-l.png") no-repeat;
+  background-size: contain;
+  width: 0.925rem;
+  height: 0.375rem;
+  top: 1.6rem;
+  left: 0.95rem;
+}
+
+.man-b .b-head .brow-r {
+  background: url("../images/page2/bb/brow-r.png") no-repeat;
+  background-size: contain;
+  width: 1.025rem;
+  height: 0.575rem;
+  top: 1.675rem;
+  right: 0.75rem;
+}
+
+@keyframes b-eye {
+  0%, 20% {
+    transform: scale(1);
+  }
+  16.66667%, 18.33333% {
+    transform: scaleY(0.001);
+  }
+}
+
+.man-b .b-head .eye-l {
+  background: url("../images/page2/bb/eye.png") no-repeat;
+  background-size: contain;
+  width: 0.8rem;
+  height: 0.6rem;
+  top: 1.85rem;
+  left: 0.95rem;
+  animation: b-eye 2400ms infinite;
+}
+
+.man-b .b-head .eye-r {
+  background: url("../images/page2/bb/eye.png") no-repeat;
+  background-size: contain;
+  width: 0.8rem;
+  height: 0.6rem;
+  top: 1.975rem;
+  right: 0.8rem;
+  animation: b-eye 2400ms infinite;
+}
+
+.man-b .b-head .mouth {
+  background: url("../images/page2/bb/mouth.png") no-repeat;
+  background-size: contain;
+  width: 1.6rem;
+  height: 0.45rem;
+  left: 1.2rem;
+  bottom: 0.7rem;
+}
+
+.man-b .b-lg {
+  background: url("../images/page2/bb/b-lg.png") no-repeat;
+  background-size: contain;
+  width: 4.55rem;
+  height: 2.7rem;
+  top: 3.5rem;
+}
+
+@keyframes num3-enter {
+  from {
+    transform: scale(6, 6) rotate(27deg) translate(3rem, -3rem);
+  }
+  to {
+    transform: scale(1, 1) rotate(0deg) translate(0rem, 0rem);
+  }
+}
+
+.num3.num2-3 {
+  transform-origin: top right;
+  transform: scale(6, 6) rotate(27deg) translate(3rem, -3rem);
+  animation: num3-enter 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.num3 {
+  background: url("../images/page3/cs3.png") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  height: 26.675rem;
+}
+
+.num3 div {
+  position: absolute;
+}
+
+.num3 .desk {
+  background: url("../images/page3/desk.png") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  height: 9.05rem;
+  top: 1.8rem;
+}
+
+.num3 .foot-l, .num3 .foot-r, .num3 .game, .num3 .head {
+  bottom: 0;
+}
+
+.num3 .foot-l {
+  background: url("../images/page3/foot-l.png") no-repeat;
+  background-size: contain;
+  width: 7.2rem;
+  height: 17.375rem;
+  left: 0.625rem;
+}
+
+.num3 .foot-r {
+  background: url("../images/page3/foot-r.png") no-repeat;
+  background-size: contain;
+  width: 7.2rem;
+  height: 14.25rem;
+  right: 0.75rem;
+}
+
+.num3 .game {
+  background: url("../images/page3/game.png") no-repeat;
+  background-size: contain;
+  width: 14.775rem;
+  height: 14.85rem;
+  left: 0.925rem;
+}
+
+.num3 .f-l {
+  background: url("../images/page3/f-l.png") no-repeat;
+  background-size: contain;
+  width: 1.85rem;
+  height: 4rem;
+  left: 4.2rem;
+  top: 4.75rem;
+}
+
+.num3 .f-r {
+  background: url("../images/page3/f-r.png") no-repeat;
+  background-size: contain;
+  width: 1.85rem;
+  height: 4rem;
+  right: 4.375rem;
+  top: 4.75rem;
+}
+
+.num3 .head {
+  background: url("../images/page3/head.png") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  height: 7.25rem;
+}
+
+.num3 .teacher.ani {
+  display: block;
+  animation: teacher 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tr3-4 {
+  to {
+    transform: translateY(96.35rem);
+  }
+}
+
+@keyframes trf-4 {
+  33.33333%, 66.66667% {
+    bottom: -15rem;
+  }
+  50% {
+    bottom: -18rem;
+  }
+  100% {
+    bottom: -11rem;
+  }
+}
+
+.num3.tr-down, .tr3-4.tr-down {
+  display: block;
+  animation: tr3-4 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.num3.tr-down .f-shadow, .tr3-4.tr-down .f-shadow {
+  bottom: -21rem;
+  animation: trf-4 3s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes teacher {
+  to {
+    bottom: -21rem;
+  }
+}
+
+.tr3-4 {
+  width: 16rem;
+  height: 70rem;
+  position: absolute;
+  background: -webkit-linear-gradient(top, #ace, #ffe4b5, #ffe4b5, #ffe4b5, #ffe4b5);
+  bottom: 26rem;
+  display: none;
+  z-index: 1;
+}
+
+.tr3-4 .f-shadow {
+  background: url("../images/f-shadow.png") no-repeat;
+  background-size: contain;
+  width: 14.4rem;
+  height: 100.675rem;
+  position: absolute;
+  bottom: -1rem;
+  right: 1.05rem;
+  opacity: 0.7;
+}
+
+.tr3-4 .f-shadow.ani {
+  animation: teacher 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes num4-up {
+  from {
+    transform: translate(0, -56.675rem) scale(1.3, 1.3);
+  }
+  20% {
+    transform: translate(0, 0);
+  }
+  80% {
+    transform: translate(-1rem, 0);
+  }
+  100% {
+    transform: translate(0rem, -1rem) scale(0.8);
+  }
+}
+
+.num4.tr-down {
+  transform-origin: 0 0;
+  animation: num4-up 5s linear;
+  animation-fill-mode: forwards;
+}
+
+.num4-1 {
+  background: url("../images/page4/cs4-1.png") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  height: 26.675rem;
+}
+
+.num4-1 div {
+  position: absolute;
+}
+
+@keyframes num4-f-con {
+  33.33333%, 66.66667% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(0deg) translateX(2.1rem);
+  }
+}
+
+.num4-1 .f-control {
+  top: 4.65rem;
+  left: -2rem;
+  background: url("../images/page4/finger.png") no-repeat;
+  background-size: contain;
+  width: 9.675rem;
+  height: 8.425rem;
+  transform-origin: top left;
+  transform: rotate(78deg) translateX(-1rem);
+  animation: num4-f-con 3s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes coin {
+  to {
+    transform: translateX(5rem);
+  }
+}
+
+.num4-1 .coin {
+  background: url("../images/page4/coin.png") no-repeat;
+  background-size: contain;
+  width: 3.225rem;
+  height: 3.225rem;
+  bottom: 4.15rem;
+  right: 0;
+  animation: coin 0.5s linear 3.5s;
+  animation-fill-mode: forwards;
+}
+
+.num4-1 .f-mask {
+  background: url("../images/page4/f-mask.png") no-repeat;
+  background-size: contain;
+  width: 8.625rem;
+  height: 5.3rem;
+  left: 0;
+  bottom: 0.9rem;
+}
+
+.num4-1 .mon-mask {
+  background: url("../images/page4/mon-mask.png") no-repeat;
+  background-size: contain;
+  width: 4.85rem;
+  height: 13.875rem;
+  right: 0.5rem;
+  top: 4.05rem;
+}
+
+@keyframes num2-4 {
+  to {
+    transform: translateX(16rem);
+  }
+}
+
+.num4-2 {
+  width: 16rem;
+  height: 26.675rem;
+  animation: num4-2-tr 4s linear;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+.num4-2 div {
+  position: absolute;
+}
+
+.num4-2 .num4-2bg {
+  background: url("../images/page4/cs4-2.png") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  height: 26.675rem;
+  transform: translateX(-2.925rem);
+}
+
+.num4-2 .con {
+  width: 19.225rem;
+  height: 23.075rem;
+  bottom: 0;
+  left: 2rem;
+}
+
+.num4-2 video {
+  position: absolute;
+  width: 11rem;
+  top: 5.32rem;
+  left: 4.6rem;
+}
+
+.num4-2 .game-con {
+  background: url("../images/page4/game-con.png") no-repeat;
+  background-size: contain;
+  width: 19.225rem;
+  height: 23.075rem;
+  bottom: 0;
+}
+
+.num4-2 .man {
+  background: url("../images/page4/man.png") no-repeat;
+  background-size: contain;
+  width: 10.175rem;
+  height: 17.675rem;
+  left: -1.725rem;
+  bottom: -0.525rem;
+}
+
+.num4-2 .lg-t {
+  background: url("../images/page4/lg-t.png") no-repeat;
+  background-size: contain;
+  width: 3.775rem;
+  height: 6.275rem;
+  right: 0.625rem;
+  top: 7.55rem;
+}
+
+.num4-2 .lg-b {
+  background: url("../images/page4/lg-b.png") no-repeat;
+  background-size: contain;
+  width: 2.875rem;
+  height: 5.125rem;
+  right: -0.3rem;
+  top: 8.7rem;
+}
+
+@keyframes num4-con {
+  to {
+    transform: translateX(20rem);
+  }
+}
+
+.num4-2.ani {
+  z-index: 1;
+}
+
+.num4-2.ani .con {
+  animation: num4-con 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes num4-2-tr {
+  from {
+    transform: translate3d(3rem, -3rem, 6rem);
+  }
+  25% {
+    transform: translate3d(3rem, -3rem, 2rem);
+  }
+  100% {
+    transform: translate3d(-5.5rem, -3rem, 2rem);
+  }
+}
+
+.num4-2.tr-down {
+  animation: num4-2-tr 4s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tr4-5 {
+  to {
+    right: -2.4rem;
+  }
+}
+
+.tr4-5 {
+  position: absolute;
+  z-index: 2;
+  right: -7rem;
+  top: -1rem;
+  animation: tr4-5 0.8s linear;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+.tr4-5 .ad {
+  background: url("../images/page5/ad.png") no-repeat;
+  background-size: cover;
+  width: 14.925rem;
+  height: 26.5rem;
+  transform: scale(1.5);
+  animation: ad 0.8s steps(7) 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ad {
+  to {
+    background-position: -104.45rem 0;
+  }
+}
+
+@keyframes tr4-5-enter {
+  from {
+    transform: scale(4, 4) translate(7rem, -2rem);
+  }
+  50% {
+    transform: scale(4, 4) translate(9rem, -2rem);
+  }
+  to {
+    transform: scale(1, 1) translate(0, 0);
+  }
+}
+
+.tr4-5.tr-enter {
+  animation: tr4-5-enter 2s;
+}
+
+@keyframes ani5 {
+  from {
+    transform: scale(3, 3) translate(9rem, -2rem);
+  }
+  50% {
+    transform: scale(3, 3) translate(9rem, -2rem);
+  }
+  to {
+    transform: scale(1.5, 1.5) translate(2rem, -4rem);
+  }
+}
+
+.num5.ani {
+  animation: ani5 2s linear 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes m-l-t {
+  0%, 75% {
+    transform: rotate(0deg);
+  }
+  25%, 50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes m-l-b {
+  0%, 75% {
+    transform: translate(0, 0);
+  }
+  25%, 50% {
+    transform: translate(-0.1rem, 0.1rem);
+  }
+}
+
+.num5 {
+  background: url("../images/page5/cs5.png") no-repeat;
+  background-size: cover;
+  width: 16rem;
+  height: 26.675rem;
+  transform: scale(3, 3) translate(9rem, -2rem);
+}
+
+.num5 div {
+  position: absolute;
+}
+
+.num5 .cs-1 {
+  position: absolute;
+  width: 3rem;
+  left: 6.825rem;
+  top: 11.25rem;
+}
+
+.num5 .cs-2 {
+  position: absolute;
+  width: 2.5rem;
+  right: -0.4rem;
+  top: 15.3rem;
+}
+
+.num5 .m-mask {
+  background: url("../images/page5/m-mask.png") no-repeat;
+  background-size: contain;
+  width: 4.25rem;
+  height: 4.05rem;
+  left: 6.8rem;
+  top: 11.2rem;
+}
+
+.num5 .n-mask {
+  background: url("../images/page5/n-mask.png") no-repeat;
+  background-size: contain;
+  width: 4.25rem;
+  height: 4.05rem;
+  right: -2rem;
+  top: 14.725rem;
+}
+
+.num5 .m-lg {
+  width: 4.4rem;
+  height: 2.1rem;
+  left: 4.625rem;
+  top: 15.5rem;
+}
+
+.num5 .m-l-t {
+  background: url("../images/page5/m-l-t.png") no-repeat;
+  background-size: contain;
+  width: 2.25rem;
+  height: 2.075rem;
+  left: 0;
+  top: 0;
+  animation: m-l-t 4s infinite;
+}
+
+.num5 .m-l-b {
+  background: url("../images/page5/m-l-b.png") no-repeat;
+  background-size: contain;
+  width: 2.8rem;
+  height: 0.875rem;
+  right: 0;
+  bottom: 0;
+  animation: m-l-b 4s infinite;
+}
+
+.num5 .n-lg {
+  width: 4.4rem;
+  height: 2.1rem;
+  left: 11.65rem;
+  top: 18.85rem;
+}
+
+.num5 .n-l-t {
+  background: url("../images/page5/n-l-t.png") no-repeat;
+  background-size: contain;
+  width: 2.25rem;
+  height: 2.075rem;
+  left: 0;
+  top: 0;
+  animation: m-l-t 4s infinite 1s;
+}
+
+.num5 .n-l-b {
+  background: url("../images/page5/n-l-b.png") no-repeat;
+  background-size: contain;
+  width: 2.8rem;
+  height: 0.875rem;
+  right: 0;
+  bottom: 0;
+  animation: m-l-b 4s infinite 1s;
+}
+
+@keyframes num5-out {
+  0% {
+    transform: scale(1.5, 1.5) translate(2rem, -4rem);
+  }
+  84.40367% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translateY(-27rem);
+  }
+}
+
+.num5.out {
+  animation: num5-out 4360ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes num6-enter {
+  0% {
+    transform: translateY(25rem);
+  }
+  6.42202% {
+    transform: translateX(0rem);
+  }
+  100% {
+    background-color: black;
+  }
+}
+
+.num6.light {
+  background: url("../images/page6/cs6.png") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  height: 26.675rem;
+  animation: num6-enter 4360ms;
+}
+
+.num6.light div {
+  position: absolute;
+}
+
+.num6.light .video-game {
+  position: absolute;
+  left: 5.68rem;
+  top: 11.85rem;
+  width: 7rem;
+}
+
+@keyframes mou-open {
+  0%, 58.33333% {
+    transform: scaleY(0.2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.num6.light .man-before {
+  top: 9.875rem;
+  width: 14.5rem;
+  height: 14.425rem;
+}
+
+.num6.light .man-before .head {
+  top: 0;
+  left: 1.425rem;
+  background: url("../images/page6/m-b/head.png") no-repeat;
+  background-size: contain;
+  width: 6.275rem;
+  height: 9.55rem;
+}
+
+.num6.light .man-before .head .mouth {
+  background: url("../images/page6/m-b/mouth.png") no-repeat;
+  background-size: contain;
+  width: 1.35rem;
+  height: 1.725rem;
+  top: 4.7rem;
+  left: 3.075rem;
+  transform: scaleY(0.2);
+  animation: mou-open 1920ms ease-in;
+  animation-fill-mode: forwards;
+}
+
+.num6.light .man-before .body {
+  background: url("../images/page6/m-b/body.png") no-repeat;
+  background-size: contain;
+  width: 7.65rem;
+  height: 5.8rem;
+  top: 7.35rem;
+  left: 1.5rem;
+}
+
+.num6.light .man-before .desk {
+  background: url("../images/page6/desk.png") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  height: 4.75rem;
+  bottom: -3.1rem;
+}
+
+.num6.light .man-before .lg-l {
+  background: url("../images/page6/m-b/lg-l.png") no-repeat;
+  background-size: contain;
+  width: 3.6rem;
+  height: 5.55rem;
+  left: -1.225rem;
+  top: 7.9rem;
+}
+
+@keyframes lg-r {
+  8.04598%, 66.66667%, 73.56322%, 94.25287% {
+    transform: rotate(8deg);
+  }
+  8.04598% {
+    transform: translate3d(0, 0, 0.1rem);
+  }
+  22.98851%, 34.48276% {
+    transform: rotate(0deg);
+  }
+  86.2069% {
+    transform: rotate(3deg);
+  }
+}
+
+.num6.light .man-before .lg-r {
+  background: url("../images/page6/m-b/lg-r.png") no-repeat;
+  background-size: contain;
+  width: 4.9rem;
+  height: 5.15rem;
+  left: 6.8rem;
+  top: 7.6rem;
+  transform-origin: top left;
+  transform: rotate(8deg);
+}
+
+@keyframes fin-r-1 {
+  0%, 46.66667% {
+    transform: translateY(0);
+  }
+  23.33333% {
+    transform: translateY(-0.1rem);
+  }
+}
+
+@keyframes h-r {
+  0%, 66.66667%, 73.56322%, 94.25287% {
+    transform: translate3d(-0.5rem, 0, 0);
+  }
+  8.04598% {
+    transform: translate3d(0, 0, 0.1rem);
+  }
+  22.98851%, 34.48276% {
+    transform: translate3d(1rem, 0, 0);
+  }
+  86.2069% {
+    transform: translate3d(0.5rem, 0, 0);
+  }
+}
+
+.num6.light .man-before .h-r {
+  background: url("../images/page6/m-b/hand-r.png") no-repeat;
+  background-size: contain;
+  width: 7.225rem;
+  height: 3.1rem;
+  top: 11.25rem;
+  left: 7.35rem;
+  animation: h-r 3480ms linear infinite;
+  animation-fill-mode: forwards;
+}
+
+.num6.light .man-before .h-r .fin-r-1 {
+  background: url("../images/page6/m-b/fin-r-1.png") no-repeat;
+  background-size: contain;
+  width: 1.95rem;
+  height: 2.75rem;
+  bottom: 0;
+  left: 2.1rem;
+  animation: fin-r-1 1200ms linear infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes h-l {
+  8.33333%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  31.66667%, 36.66667% {
+    transform: translateX(-1rem);
+  }
+  58.33333%, 58.33333% {
+    transform: translate3d(-1rem, 0, -0.1rem);
+  }
+  65% {
+    transform: translate3d(0, 0, -0.1rem);
+  }
+}
+
+@keyframes fin {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.num6.light .man-before .h-l {
+  background: url("../images/page6/m-b/mouse.png") no-repeat;
+  background-size: contain;
+  width: 4.5rem;
+  height: 2.75rem;
+  bottom: 0;
+  animation: h-l 2400ms linear infinite;
+}
+
+.num6.light .man-before .h-l .fin-1 {
+  background: url("../images/page6/m-b/fin-1.png") no-repeat;
+  background-size: contain;
+  width: 1.325rem;
+  height: 2.475rem;
+  left: 1.675rem;
+  transform-origin: top left;
+  transform: rotate(-5deg);
+  animation: fin 200ms;
+  animation-fill-mode: forwards;
+}
+
+.num6.light .man-before .h-l .fin-2 {
+  background: url("../images/page6/m-b/fin-2.png") no-repeat;
+  background-size: contain;
+  width: 1.875rem;
+  height: 2.125rem;
+  right: 0.425rem;
+}
+
+.num6.darken {
+  background-color: black;
+  width: 100%;
+}
+
+.num6.darken div {
+  position: absolute;
+}
+
+@keyframes num6-d-eye {
+  16%, 48% {
+    transform: scaleY(0.001);
+  }
+  0%, 32%, 64% {
+    transform: scaleY(1);
+  }
+}
+
+.num6.darken .eye-l {
+  background: url("../images/page6/eye-l.png") no-repeat;
+  background-size: contain;
+  width: 1.525rem;
+  height: 1.25rem;
+  left: 3.15rem;
+  top: 13.15rem;
+  animation: num6-d-eye 1s;
+}
+
+.num6.darken .eye-r {
+  background: url("../images/page6/eye-r.png") no-repeat;
+  background-size: contain;
+  width: 1.35rem;
+  height: 1.1rem;
+  top: 13.025rem;
+  left: 5.45rem;
+  animation: num6-d-eye 1s;
+}
+
+.num7 {
+  background: url("../images/page7/cs7.png") no-repeat;
+  background-size: contain;
+  width: 16rem;
+  height: 26.675rem;
+}
+
+.num7 div {
+  position: absolute;
+}
+
+.num7 .c-mask {
+  background: url("../images/page7/c-mask.png") no-repeat;
+  background-size: cover;
+  width: 15.5rem;
+  height: 8.175rem;
+  bottom: 0;
+  right: 0;
+}
+
+.num7 .zhuzi {
+  background: url("../images/page7/zhuzi.png") repeat-y;
+  width: 1.25rem;
+  height: 26.675rem;
+  right: 1.5rem;
+}
+
+.num7 .hand {
+  background: url("../images/page7/handrail.png") no-repeat;
+  background-size: contain;
+  width: 4rem;
+  height: 5.4rem;
+}
+
+.num7 .hand-1 {
+  transform: scale(0.5);
+}
+
+.num7 .hand-2 {
+  transform: scale(0.8);
+}
